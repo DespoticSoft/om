@@ -24,6 +24,7 @@
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="app"></div>
 
+
     <script src="{{ asset('adset/js/plugins/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('adset/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <!--   Optional JS   -->
@@ -39,7 +40,7 @@
             application: "argon-dashboard-free"
         });
     </script>
-
+{{--    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script >--}}
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

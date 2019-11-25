@@ -10,11 +10,11 @@ class ProductCategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return ProductCategory[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return ProductCategory::all();
     }
 
     /**
@@ -27,15 +27,10 @@ class ProductCategoryController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $response = ProductCategory::create($request->all());
+        return $response;
     }
 
     /**

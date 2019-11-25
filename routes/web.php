@@ -11,5 +11,15 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/{any}', 'AdminController@index')->where('any', '.*');
+Route::get('/test/', function(){
+    return "<img src='".asset('storage/image/product/product-25.png')."'>";
+});
+Auth::routes();
+Route::get('/auth', function(){
+   return Auth::user();
+});
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{any}', 'AdminController@index')->where('any', '.*')->middleware('auth');

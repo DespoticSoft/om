@@ -90,32 +90,38 @@
                     </form>
                     <!-- Navigation -->
                     <ul class="navbar-nav">
-                        <li class="nav-item  class=" active>
+                        <li class="nav-item  class="active>
                         <router-link class="nav-link active" to="/"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
                         </router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="#store" data-toggle="collapse" aria-expanded="false">
-                                <i class="ni ni-planet text-blue"></i> Store
+                                <i class="fa fa-store-alt text-orange"></i> Store
                             </a>
                             <ul class="collapse list-unstyled ml-3" id="store" >
                                 <li class="nav-item">
-                                    <router-link to="/product-create" class="nav-link">
-                                        <i class="fa fa-plus text-red"> </i>Add Product
+                                    <router-link to="/product" class="nav-link">
+                                        <i class="fa fa-database text-blue"> </i> Product
                                     </router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/product" class="nav-link">
-                                        <i class="fa fa-database text-blue"> </i>View Product
+                                    <router-link to="/item" class="nav-link">
+                                        <i class="fa fa-archive text-red"> </i> Items
                                     </router-link>
                                 </li>
+                                <li class="nav-item">
+                                    <router-link to="/category" class="nav-link">
+                                        <i class="fa fa-book text-info"> </i> Categories
+                                    </router-link>
+                                </li>
+
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="./examples/maps.html">
-                                <i class="ni ni-pin-3 text-orange"></i> Maps
-                            </a>
-                        </li>
+<!--                        <li class="nav-item">-->
+<!--                            <router-link class="nav-link " to="/product">-->
+<!--                                <i class="fa fa-cubes text-orange"></i> Product-->
+<!--                            </router-link>-->
+<!--                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link " href="./examples/profile.html">
                                 <i class="ni ni-single-02 text-yellow"></i> User profile

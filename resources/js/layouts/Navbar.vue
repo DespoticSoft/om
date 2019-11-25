@@ -21,11 +21,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="media align-items-center">
-                <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4-800x800.jpg">
-                </span>
+                                <span class="avatar avatar-sm rounded-circle">
+                                  <img alt="Image placeholder" :src="authUser.image">
+                                </span>
                                 <div class="media-body ml-2 d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                                    <span class="mb-0 text-sm  font-weight-bold">{{ authUser.name }}</span>
                                 </div>
                             </div>
                         </a>
@@ -63,5 +63,22 @@
     </div>
 </template>
 <script>
-    export default {}
+    export default {
+        data(){
+            return {
+                authUser: {}
+            }
+        },
+        created(){
+            this.getAuth();
+        },
+        methods: {
+          getAuth(){
+              axios.get('/auth')
+                  .then((result) => {
+                      this.authUser = result.data;
+                  });
+          }
+        }
+    }
 </script>

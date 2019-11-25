@@ -18,6 +18,12 @@ class ProductsTableSeeder extends Seeder
                 'name' => $category
             ]);
         }
+        $brands = ['Sony', 'Samsung', 'Nokia'];
+        foreach($brands as $brand){
+            DB::table('brands')->insert([
+                'name' => $brand
+            ]);
+        }
         $products = factory(Product::class, 20)->create();
     }
 }

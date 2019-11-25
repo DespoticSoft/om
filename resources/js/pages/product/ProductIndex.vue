@@ -6,10 +6,13 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Page visits</h3>
+                                <h3 class="mb-0">Products</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="#" class="btn btn-sm btn-outline-success"><i class="fa fa-plus"></i> Add Product</a>
+                                <router-link :to="{name: 'product-create'}" class="btn btn-outline-success"><i class="fa fa-plus"></i> Add Product</router-link>
+                                <router-link :to="{name: 'product-create', query:{bulk: true}}" class="btn btn-outline-primary"><i class="fa fa-cube"></i> Bulk Add Product</router-link>
+                                <button class="btn btn-outline-info"><i class="fa fa-cubes"></i> Add Item</button>
+<!--                                <router-link :to="{name: 'item-create'}" class="btn btn-outline-info"><i class="fa fa-cubes"></i> Add Item</router-link>-->
                             </div>
                         </div>
                     </div>
@@ -21,10 +24,7 @@
                                 <th scope="col">Image</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">QR</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Type</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Supplier</th>
                                 <th scope="col">Created/Updated</th>
                                 <th scope="col">Action</th>
                                 <th scope="col"/>
@@ -39,22 +39,22 @@
                                 <td>
                                     <img class="rounded" :src="product.qr" alt=""  style="width:50px;">
                                 </td>
-                                <td>{{ product.category.name}}</td>
-                                <td>{{ product.type }}</td>
                                 <td>Description</td>
-                                <td>{{ product.supplier.name}}</td>
                                 <td>
                                     <small class="text-center text-success">{{ format_date(product.created_at) }}</small>
                                     <br>
                                     <small class="text-center text-info">{{ format_date(product.updated_at) }}</small>
                                 </td>
                                 <td>
-                                    <i class="btn btn-sm btn-outline-darker fa fa-eye"></i>
-                                    <i class="btn btn-sm btn-outline-primary fas fa-pencil-alt"></i>
+                                    <router-link :to="{name: 'product-view', params: {id: product.id}}" class="btn btn-sm btn-outline-info">
+                                        <i class="fa fa-eye"></i>
+                                    </router-link>
+                                    <router-link :to="{name: 'product-update', params: {id: product.id}}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </router-link>
                                     <i @click="deleteFunc(product)" class="btn btn-sm btn-outline-danger fa fa-trash"></i>
                                 </td>
                             </tr>
-
                             </tbody>
                         </table>
                     </div>
@@ -69,10 +69,12 @@
     import "photoswipe";
     import Swal from "sweetalert2";
     import moment from "moment";
+    import ProductView from "./ProductView";
+    import ProductCreate from "./ProductCreate";
     export default {
         data() {
             return {
-                products: []
+                products: [],
             }
         },
         created: function() {
@@ -82,13 +84,27 @@
             loadProduct(){
                 axios.get('/api/product')
                     .then((response) => {
-                        console.log("Products", response.data);
                         this.products = response.data;
+                        console.log("Products", this.products);
                     })
                     .catch((error) => {
-                        alert("Error");
-                    });
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: error,
+                            footer: 'Your database might be offline',
+                            confirmButtonText: 'Reload',
+                            showCancelButton: true,
+                            cancelButtonColor: '#d33'
+                        }).then((result) => {
+                            if(result.value){
+                                window.location.href = '/product';
+                            }
+                        });
+                        alert();
+                });
             },
+
             deleteFunc(product){
 
                 const swalWithBootsrapButtons = Swal.mixin({
@@ -110,11 +126,13 @@
                     if(result.value){
                         axios.delete('/api/product/'+product.id)
                             .then((response) =>{
-                                swalWithBootsrapButtons.fire(
-                                    'Deleted!',
-                                    product.name+' has been Deleted!',
-                                    'success'
-                                );
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'warning',
+                                    title: 'Product has been deleted!',
+                                    showConfirmButton: false,
+                                    timer: 1000
+                                });
                                 this.loadProduct();
                             })
                             .catch((error) => {
@@ -137,8 +155,9 @@
                 return moment(date).format('llll');
             }
         },
-        computed: {
-
+        components: {
+            "ProductCreate": ProductCreate,
+            "ProductView": ProductView
         }
     }
 </script>
