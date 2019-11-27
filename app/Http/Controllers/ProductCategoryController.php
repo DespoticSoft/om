@@ -14,7 +14,7 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        return ProductCategory::all();
+        return ProductCategory::orderBy('updated_at', 'desc')->get();
     }
 
     /**
@@ -73,8 +73,9 @@ class ProductCategoryController extends Controller
      * @param  \App\ProductCategory  $productCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductCategory $productCategory)
+    public function destroy($id)
     {
-        //
+        $product =ProductCategory::find($id)->delete();
+        return response()->json([$product, 'message' => 'Successfully Deleted!', 'http' => 200]);
     }
 }

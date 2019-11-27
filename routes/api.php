@@ -24,6 +24,7 @@ Route::resource('product', 'ProductController');
 Route::resource('product-category', 'ProductCategoryController');
 Route::resource('brand', 'BrandController');
 Route::resource('store', 'StoreController');
+Route::resource('item', 'ItemController');
 
 Route::group(['prefix' => 'search', 'as' => 'search'], function(){
     Route::get('/user/{key}/{value}', function($key, $value){

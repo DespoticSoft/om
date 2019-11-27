@@ -74,7 +74,7 @@
     import "dropify";
     import Swal from "sweetalert2";
     import BrandCreate from "./BrandCreate";
-    import CategoryCreate from "./CategoryCreate";
+    import CategoryCreate from "../category/CategoryCreate";
     export default {
         data: () => {
             return {

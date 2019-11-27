@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import ProductCreate from "./pages/product/ProductCreate";
 import Dashboard from "./pages/Dashboard";
 import ProductIndex from "./pages/product/ProductIndex";
-import CategoryCreate from "./pages/product/CategoryCreate";
+import CategoryCreate from "./pages/category/CategoryCreate";
 import ProductUpdate from "./pages/product/ProductUpdate";
 import ProductView from "./pages/product/ProductView";
 import CategoryIndex from "./pages/category/CategoryIndex";
