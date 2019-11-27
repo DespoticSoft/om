@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc482651-f6c2-4422-bb19-140584df7996" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ItemController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/item/ItemIndex.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/layouts/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/layouts/Footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/category/CategoryIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/category/CategoryIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/product/CategoryCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/category/CategoryCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/product/ProductCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/product/ProductCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/product/ProductUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/product/ProductUpdate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/product/ProductView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/product/ProductView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -232,8 +220,16 @@
       <workItem from="1574598046909" duration="4583000" />
       <workItem from="1574659305098" duration="12818000" />
       <workItem from="1574673645943" duration="13760000" />
-      <workItem from="1574838692230" duration="10397000" />
+      <workItem from="1574838692230" duration="13613000" />
     </task>
+    <task id="LOCAL-00001" summary="v 1.1&#10;-category&#10;-item">
+      <created>1574855137816</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574855137816</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,5 +247,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v 1.1&#10;-category&#10;-item" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 1.1&#10;-category&#10;-item" />
   </component>
 </project>
